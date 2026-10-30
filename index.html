@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#260e12">
+    <meta name="description" content="Ứng dụng tài chính tích hợp Trade.">
+    <title>Finora — Quản lý tài chính & Trade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <script src="auth.js" defer></script>
+    <script src="trade.js" defer></script>
+  </head>
+  <body>
+    <main class="phone">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Finora trang chủ">
+          <span class="brand-icon" aria-hidden="true">福</span>
+          <span>finora</span>
+        </a>
+        <span class="demo-label live-label"><span></span> LIVE SYSTEM</span>
+      </header>
+
+      <!-- BANNER IMPERIAL LONG PHỤNG SUM VẦY -->
+      <section class="imperial-banner" aria-label="Long Phụng — Tụ hội thịnh vượng">
+        <svg class="celestial-art" viewBox="0 0 600 230" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="engraved-gold" x1="30" y1="20" x2="550" y2="210" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#9c6c32"/>
+              <stop offset=".45" stop-color="#f3d99a"/>
+              <stop offset="1" stop-color="#ad7f3b"/>
+            </linearGradient>
+            <pattern id="silk-lattice" width="28" height="28" patternUnits="userSpaceOnUse">
+              <path d="M14 0 28 14 14 28 0 14Z" stroke="#d4ae67" stroke-opacity=".055"/>
+            </pattern>
+          </defs>
+          <path fill="url(#silk-lattice)" d="M0 0h600v230H0z"/>
+          
+          <g stroke="url(#engraved-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- LONG (Rồng uốn lượn chi tiết) -->
+            <g class="dragon-engraving">
+              <path d="M154 72C123 47 76 60 59 94c-26 54 23 100 69 88 35-9 48-43 26-65-17-17-43-8-43 12 0 13 17 18 25 8-20 38-72 15-66-22 5-31 33-45 60-35"/>
+              <path d="M132 81 144 93 157 89 164 80 184 78 190 71 181 63 165 62 156 51 142 55 134 65 122 67Z" fill="#501e1b"/>
+              <path d="m153 53-2-16-10-10m10 17 9-11 1-13m-24 40-13-11-3-15m5 17-12-3m47 25 9 5 11-1m-25 8 18-1-7 6m-22-15 6-2 4 3m-7 13 6 7-9-1m-21-2c-15 4-22 15-13 21m35-23c31-4 48 11 33 20-8 5-21-1-20-8m-28-16c-18-10-40-9-42 1"/>
+              <circle cx="158" cy="64" r="1.8" fill="#f3d99a"/>
+              <path d="m119 63-10-8-7 8-12-6-4 10-13-1 1 11-14 4 5 9-12 8 6 8-10 13 10 5-4 14 11 1 1 15 12-3 7 12 9-7 12 9 5-11 14 4 1-11m-25-54c-8 1-12 7-13 13m0 0c-8-1-15 3-18 9m18-9c5 2 9 7 9 12m-27-3c0 9 5 13 10 15m-10-15c-6 3-9 8-9 15m19 0c6 0 11 3 14 9m-25-1c-5 6-4 13 0 18m11-10c-2 7 1 14 8 17m-2-24c6 1 12 6 13 12m8-4c-1 7 3 11 8 13"/>
+              <path d="m79 89-20-8-12-18-10 3m14 13-13-2-8 8m17-18-3-11-8-3m33 94-24 7-9 16m12-11-13 1-7 8m118-21 21 5 11 17m-12-12 12 1 8 9m-20-15 2-11 9-4"/>
+              <path d="M100 182c-4 18-27 26-41 15 22 2 27-8 25-16m-25-84C34 86 20 99 27 110c4 6 14 3 12-3m77-51c-7-15-27-21-37-11 10-2 18 2 18 9"/>
+            </g>
+
+            <!-- PHỤNG (Phượng hoàng xòe cánh đuôi) -->
+            <g class="phoenix-engraving">
+              <path d="M452 92c-9-10-6-25 6-29l13 3 9 10-15 1c-9 9 2 23 12 30 16 10 14 27-1 36-15 8-31 0-35-13-4-12 0-26 11-38Z" fill="#501e1b"/>
+              <path d="m457 62-6-16 6-9m4 25 3-21 9-7m-6 29 13-13 10 2m-10 24 7 4-13 1m-15-9 5-1"/>
+              <circle cx="461" cy="70" r="1.6" fill="#f3d99a"/>
+              <path d="M446 104c-35-9-48-46-43-72 8 24 18 35 33 41-10-20-8-38 0-51 0 30 9 49 19 58m-12 34c-39 0-67-28-71-55 17 20 34 31 56 31m13 33c-37 7-68-8-81-28 21 11 42 13 65 8m18 28c-32 15-61 14-80 0 29 4 51-5 71-17"/>
+              <path d="M479 103c32-10 49-38 51-65-14 17-28 30-44 35 16-20 16-40 12-54-7 22-20 40-31 47m18 48c36-3 69-25 77-48-20 14-43 23-62 24m-14 33c35 8 64-6 81-22-23 7-49 9-66 6m-19 24c33 17 64 10 83-1-29 1-52-5-68-15"/>
+              <path d="M460 143c-28 13-31 40-58 50-17 6-32 1-40-11 28 10 41-13 54-28m55-10c-8 22-1 45-25 60-12 8-28 5-35-4 30 7 27-27 31-42m34-17c12 21 31 25 35 42 5 20-15 32-30 24 23-4 10-21 0-29m-6-38c25 8 47 3 61 15 17 14 8 35-5 37 14-21-20-28-34-28"/>
+              <path d="M452 149c-29 30-41 68-74 61m89-58c-2 22 11 44 0 62m14-67c20 16 49 12 63 29"/>
+              <ellipse cx="381" cy="182" rx="10" ry="5" transform="rotate(10 381 182)"/>
+              <ellipse cx="433" cy="200" rx="9" ry="5" transform="rotate(-30 433 200)"/>
+              <ellipse cx="499" cy="199" rx="5" ry="9" transform="rotate(25 499 199)"/>
+              <path d="m455 137-6 13 8 5m11-15-2 14 9 4"/>
+            </g>
+
+            <!-- MÂY LÀNH VÀ HÀO QUANG -->
+            <g opacity=".5">
+              <path d="M20 198h41m-38-8c-12-11 6-24 15-12 0-18 28-19 29-1 13-7 25 7 14 14H41M514 25h55m-48-7c-6-10 8-18 14-9 5-14 26-9 23 5 14-6 21 10 9 12M241 193h118m-99 7h80"/>
+              <path d="m289 31 11-11 11 11-11 11Z"/>
+              <path d="M300 7v7m0 34v7m-24-24h7m34 0h7"/>
+            </g>
+            <circle cx="300" cy="112" r="58" stroke-opacity=".28"/>
+            <circle cx="300" cy="112" r="64" stroke-dasharray="1 7" stroke-opacity=".3"/>
+          </g>
+        </svg>
+
+        <div class="imperial-copy">
+          <p class="imperial-kicker">FINORA · LONG PHỤNG</p>
+          <h2>Tụ hội<br>thịnh vượng</h2>
+          <span class="imperial-rule" aria-hidden="true"></span>
+          <p>Tinh hoa truyền thống · Tầm nhìn mới</p>
+        </div>
+
+        <span class="banner-corner corner-tl" aria-hidden="true"></span>
+        <span class="banner-corner corner-tr" aria-hidden="true"></span>
+        <span class="banner-corner corner-bl" aria-hidden="true"></span>
+        <span class="banner-corner corner-br" aria-hidden="true"></span>
+      </section>
+
+      <!-- TAB ĐIỀU HƯỚNG TRÊN -->
+      <nav class="tabs tabs-4" aria-label="Các màn hình chính">
+        <button class="tab active" type="button" data-screen="home" aria-selected="true">Tổng quan</button>
+        <button class="tab" type="button" data-screen="trade" aria-selected="false">Trade</button>
+        <button class="tab" type="button" data-screen="account" aria-selected="false">Tài khoản</button>
+        <button class="tab" type="button" data-screen="money" aria-selected="false">Nạp / Rút</button>
+      </nav>
+
+      <!-- MÀN HÌNH 1: TỔNG QUAN -->
+      <section class="screen" id="screen-home">
+        <div class="welcome">
+          <div>
+            <p class="eyebrow">CHÀO MỪNG TRỞ LẠI</p>
+            <h1><span id="welcome-name">Khách</span> <span aria-hidden="true">✦</span></h1>
+            <p class="muted" id="welcome-caption">Đăng nhập để hiển thị hồ sơ của bạn.</p>
+            <button type="button" class="text-button" id="welcome-login" data-screen-jump="account">Đăng nhập / Đăng ký</button>
+          </div>
+          <button class="avatar" id="user-avatar" type="button" data-screen-jump="account" aria-label="Mở tài khoản">?</button>
+        </div>
+
+        <article class="balance-card">
+          <div class="balance-top"><span>Số dư khả dụng</span><span class="lock live-badge">ONLINE</span></div>
+          <strong><span id="balance-display">0</span> <small>₫</small></strong>
+          <p>Cập nhật tự động qua cổng VietQR</p>
+          <div class="balance-actions">
+            <button type="button" class="balance-action" data-screen-jump="money"><span>＋</span> Nạp tiền</button>
+            <button type="button" class="balance-action secondary" data-screen-jump="trade"><span>↗</span> Vào Trade ngay</button>
+          </div>
+        </article>
+
+        <section class="section">
+          <div class="section-heading">
+            <div><p class="eyebrow">DANH MỤC</p><h2>Phân bổ tài sản</h2></div>
+            <span class="tiny-badge">LIVE DATA</span>
+          </div>
+          <div class="asset-list">
+            <article class="asset">
+              <span class="asset-icon blue">V</span>
+              <span class="asset-name"><strong>Quỹ cân bằng</strong><small>Tăng trưởng an toàn</small></span>
+              <span class="asset-value"><strong><span id="asset-val-1">0</span> ₫</strong><small>40% số dư</small></span>
+            </article>
+            <article class="asset">
+              <span class="asset-icon green">T</span>
+              <span class="asset-name"><strong>Tiết kiệm linh hoạt</strong><small>Lãi suất 8.5%/năm</small></span>
+              <span class="asset-value"><strong><span id="asset-val-2">0</span> ₫</strong><small>40% số dư</small></span>
+            </article>
+            <article class="asset">
+              <span class="asset-icon violet">G</span>
+              <span class="asset-name"><strong>Trái phiếu ngắn hạn</strong><small>Lợi nhuận cố định</small></span>
+              <span class="asset-value"><strong><span id="asset-val-3">0</span> ₫</strong><small>20% số dư</small></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <div><p class="eyebrow">HOẠT ĐỘNG</p><h2>Lịch sử giao dịch</h2></div>
+            <span class="tiny-badge">HỆ THỐNG</span>
+          </div>
+          <div class="tx-list" id="transaction-history">
+            <p class="empty-msg" style="text-align: center; color: #94a3b8; font-size: 11px;">Chưa có giao dịch nào.</p>
+          </div>
+        </section>
+      </section>
+
+      <!-- MÀN HÌNH 2: TRADE -->
+      <section class="screen" id="screen-trade" hidden>
+        <div class="page-heading trade-heading">
+          <div><p class="eyebrow">LONG PHỤNG · THỊ TRƯỜNG</p><h1>Trạm giao dịch</h1></div>
+        </div>
+        <p class="trade-explainer">Cập nhật giá thị trường trực tiếp · Vốn thử nghiệm 10.000 USDT cho mỗi tài khoản.</p>
+        <p class="trade-footnote" id="market-source">Đang xác định nguồn giá…</p>
+        <div class="market-status"><span id="market-connection" role="status">Đang kết nối thị trường…</span><button type="button" class="text-button" id="trade-refresh">Làm mới</button></div>
+        
+        <div class="market-toolbar fields">
+          <label><span>Tìm cặp giao dịch</span><input id="market-search" type="search" placeholder="BTC, Solana, Pepe…" autocomplete="off"></label>
+          <label><span>Sắp xếp</span>
+            <select class="select-field" id="market-sort">
+              <option value="default">Mặc định</option>
+              <option value="gainers">Tăng mạnh nhất</option>
+              <option value="losers">Giảm mạnh nhất</option>
+              <option value="volume">Khối lượng 24h</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="market-filters" aria-label="Nhóm thị trường">
+          <button type="button" class="filter-chip active" data-market-filter="all" aria-pressed="true">Tất cả</button>
+          <button type="button" class="filter-chip" data-market-filter="layer1" aria-pressed="false">Nền tảng</button>
+          <button type="button" class="filter-chip" data-market-filter="defi" aria-pressed="false">DeFi & Công nghệ</button>
+          <button type="button" class="filter-chip" data-market-filter="meme" aria-pressed="false">Meme</button>
+        </div>
+
+        <p class="market-count" id="market-count" aria-live="polite"></p>
+        <div class="market-ticker expanded-markets" id="market-list" aria-label="Chọn cặp giao dịch"></div>
+
+        <article class="panel trade-panel">
+          <div class="trade-header"><strong id="selected-pair-title">BTC/USDT</strong><span class="tiny-badge" id="selected-change">24H —</span></div>
+          <div class="current-big-price"><span id="active-symbol-price">—</span><small>USDT · Giá thị trường</small></div>
+          <div class="market-stats">
+            <div><small>Cao 24h</small><strong id="market-high">—</strong></div>
+            <div><small>Thấp 24h</small><strong id="market-low">—</strong></div>
+            <div><small>Khối lượng USDT</small><strong id="market-volume">—</strong></div>
+          </div>
+          <div class="demo-wallet"><span>Số dư khả dụng</span><strong id="trade-balance">Đăng nhập để nhận vốn thử</strong></div>
+
+          <form id="trade-form">
+            <div class="fields trade-order-fields">
+              <label><span>Loại lệnh</span>
+                <select id="trade-order-type" class="select-field">
+                  <option value="market">Market · Khớp theo giá hiện tại</option>
+                  <option value="limit">Limit · Chờ giá mong muốn</option>
+                </select>
+              </label>
+
+              <div class="order-field-grid">
+                <label><span>Đòn bẩy</span>
+                  <select id="trade-leverage" class="select-field">
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="5">5x</option>
+                    <option value="10" selected>10x</option>
+                    <option value="20">20x</option>
+                    <option value="25">25x</option>
+                    <option value="50">50x</option>
+                    <option value="75">75x</option>
+                    <option value="100">100x</option>
+                  </select>
+                </label>
+                <label><span>Ký quỹ (USDT)</span><input type="number" id="trade-margin" value="20" min="5" max="1000000" step="any" required></label>
+              </div>
+
+              <div class="margin-presets" aria-label="Chọn nhanh ký quỹ">
+                <button type="button" data-margin-percent="10">10%</button>
+                <button type="button" data-margin-percent="25">25%</button>
+                <button type="button" data-margin-percent="50">50%</button>
+                <button type="button" data-margin-percent="100">100%</button>
+              </div>
+
+              <label id="limit-price-field" hidden><span>Giá giới hạn (USDT)</span><input type="number" id="trade-limit-price" min="0" step="any" placeholder="Giá bạn muốn khớp"></label>
+
+              <div class="order-field-grid">
+                <label><span>Chốt lời TP (tùy chọn)</span><input type="number" id="trade-take-profit" min="0" step="any" placeholder="Giá USDT"></label>
+                <label><span>Cắt lỗ SL (tùy chọn)</span><input type="number" id="trade-stop-loss" min="0" step="any" placeholder="Giá USDT"></label>
+              </div>
+            </div>
+
+            <p class="order-estimate" id="trade-estimate" aria-live="polite"></p>
+            <p class="trade-message" id="trade-message" role="status" hidden></p>
+            <div class="trade-actions">
+              <button type="submit" class="btn-long" id="btn-order-long" value="LONG">LONG · TĂNG</button>
+              <button type="submit" class="btn-short" id="btn-order-short" value="SHORT">SHORT · GIẢM</button>
+            </div>
+          </form>
+
+          <p class="trade-footnote">Ký quỹ cô lập · Quy mô vị thế = ký quỹ × đòn bẩy.</p>
+        </article>
+
+        <section class="section">
+          <div class="section-heading"><div><p class="eyebrow">SỔ GIAO DỊCH</p><h2>Lệnh & vị thế của bạn</h2></div></div>
+          <div class="trade-ledger-tabs" aria-label="Danh sách lệnh">
+            <button type="button" class="filter-chip active" data-ledger="positions" aria-pressed="true">Vị thế <span id="pos-count">0</span></button>
+            <button type="button" class="filter-chip" data-ledger="orders" aria-pressed="false">Chờ khớp <span id="order-count">0</span></button>
+            <button type="button" class="filter-chip" data-ledger="history" aria-pressed="false">Lịch sử</button>
+          </div>
+          <div id="positions-list" class="positions-list"><p class="empty-msg">Đăng nhập để xem giao dịch.</p></div>
+          <div id="orders-list" class="positions-list" hidden></div>
+          <div id="trade-history-list" class="positions-list" hidden></div>
+        </section>
+      </section>
+
+      <!-- MÀN HÌNH 3: TÀI KHOẢN -->
+      <section class="screen" id="screen-account" hidden>
+        <div class="page-heading"><p class="eyebrow">TÀI KHOẢN CÁ NHÂN</p><h1 id="account-heading">Tài khoản của bạn</h1><p class="muted">Đăng nhập để quản lý hồ sơ cá nhân.</p></div>
+        <p class="account-message" id="auth-message" role="status" aria-live="polite" hidden></p>
+
+        <div id="auth-guest">
+          <div class="subtabs" aria-label="Đăng nhập hoặc đăng ký">
+            <button type="button" class="subtab active" data-auth="login" aria-selected="true">Đăng nhập</button>
+            <button type="button" class="subtab" data-auth="signup" aria-selected="false">Đăng ký</button>
+          </div>
+
+          <form class="panel" id="login-form">
+            <div class="panel-heading"><span class="panel-mark">ID</span><div><h2>Chào mừng trở lại</h2><p>Đăng nhập bằng tên tài khoản và mật khẩu.</p></div></div>
+            <div class="fields">
+              <label><span>Tên tài khoản</span><input name="username" autocomplete="username" required minlength="3" maxlength="30" placeholder="Tên tài khoản của bạn" autocapitalize="none" spellcheck="false"></label>
+              <label><span>Mật khẩu</span><input name="password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Nhập mật khẩu"></label>
+            </div>
+            <button class="primary-button" type="submit">Đăng nhập</button>
+            <button class="text-button" type="button" id="forgot-password">Quên mật khẩu?</button>
+          </form>
+
+          <form class="panel" id="signup-form" hidden>
+            <div class="panel-heading"><span class="panel-mark">ID</span><div><h2>Tạo tài khoản Finora</h2><p>Hồ sơ của bạn được lưu để sử dụng trên các thiết bị.</p></div></div>
+            <div class="fields">
+              <label><span>Tên người dùng hiển thị</span><input name="displayName" autocomplete="name" required maxlength="80" placeholder="Tên hiển thị trong app"></label>
+              <label><span>Số điện thoại</span><input name="phone" type="tel" autocomplete="tel" required maxlength="20" placeholder="Số điện thoại của bạn"></label>
+              <label><span>Tên tài khoản</span><input name="username" autocomplete="username" required minlength="3" maxlength="30" placeholder="3–30 ký tự: chữ, số hoặc _" autocapitalize="none" spellcheck="false"></label>
+              <label><span>Email xác minh</span><input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="Email để xác minh và khôi phục mật khẩu"></label>
+              <label><span>Mật khẩu</span><input name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="Ít nhất 8 ký tự"></label>
+              <label><span>Nhập lại mật khẩu</span><input name="confirmation" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="Nhập lại mật khẩu"></label>
+            </div>
+            <button class="primary-button" type="submit">Tạo tài khoản</button>
+          </form>
+
+          <form class="panel" id="recovery-form" hidden>
+            <div class="panel-heading"><span class="panel-mark">ID</span><div><h2>Khôi phục mật khẩu</h2><p>Nhập email đã dùng khi đăng ký.</p></div></div>
+            <div class="fields"><label><span>Email</span><input name="email" type="email" autocomplete="email" required></label></div>
+            <button class="primary-button" type="submit">Gửi liên kết khôi phục</button>
+            <button class="text-button" type="button" id="back-login">Quay lại đăng nhập</button>
+          </form>
+        </div>
+
+        <form class="panel" id="profile-form" hidden>
+          <div class="panel-heading"><span class="panel-mark" id="profile-avatar">ID</span><div><h2 id="profile-display-name">Hồ sơ cá nhân</h2><p id="profile-username"></p></div></div>
+          <div class="fields">
+            <label><span>Tên người dùng hiển thị</span><input name="displayName" autocomplete="name" required maxlength="80"></label>
+            <label><span>Số điện thoại</span><input name="phone" type="tel" autocomplete="tel" required maxlength="20"></label>
+            <label><span>Tên tài khoản</span><input name="username" readonly></label>
+            <label><span>Email xác minh</span><input name="email" type="email" readonly></label>
+          </div>
+          <button class="primary-button" type="submit">Lưu thay đổi</button>
+          <button class="text-button" type="button" id="logout-button">Đăng xuất</button>
+        </form>
+      </section>
+
+      <!-- MÀN HÌNH 4: NẠP / RÚT -->
+      <section class="screen" id="screen-money" hidden>
+        <div class="page-heading"><p class="eyebrow">GIAO DỊCH TÀI CHÍNH</p><h1>Nạp &amp; rút tiền</h1><p class="muted">Hệ thống xử lý tự động qua cổng VietQR VIB.</p></div>
+        <div class="subtabs" aria-label="Chọn màn hình nạp hoặc rút">
+          <button type="button" class="subtab active" data-money="deposit" aria-selected="true">Nạp tiền</button>
+          <button type="button" class="subtab" data-money="withdraw" aria-selected="false">Rút tiền</button>
+        </div>
+        <article class="panel">
+          <div class="panel-heading"><span class="panel-mark" id="money-icon">QR</span><div><h2 id="money-title">Nạp tiền tài khoản</h2><p id="money-caption">Quét mã QR chuyển khoản ngân hàng tự động.</p></div></div>
+          
+          <div id="deposit-fields" class="fields">
+            <div class="promo-banner">
+              <div class="promo-tag">ƯU ĐÃI NẠP ĐẦU</div>
+              <p><strong>Nạp 200.000 ₫</strong> — Nhận ngay <strong>1.000.000 ₫</strong> vào tài khoản giao dịch!</p>
+              <button type="button" class="btn-promo-apply" id="apply-promo-200k">Áp dụng ngay gói 200K</button>
+            </div>
+
+            <label><span>Số tiền muốn nạp (₫)</span><input type="number" id="deposit-amount" placeholder="VD: 500000" min="10000" step="10000" value="200000"></label>
+            <label><span>Phương thức thanh toán</span>
+              <select id="deposit-method" class="select-field">
+                <option value="vietqr">VietQR (VIB - NONG THE AN - 099276371)</option>
+              </select>
+            </label>
+            
+            <div id="qr-box" class="qr-box" hidden>
+              <div class="qr-image-container">
+                <img src="image_6c08a0.png" alt="Mã VietQR VIB" class="qr-image">
+              </div>
+              <div class="qr-details">
+                <p>Ngân hàng: <strong>VIB (Ngân hàng Quốc Tế)</strong></p>
+                <p>Chủ tài khoản: <strong>NONG THE AN</strong></p>
+                <p>Số tài khoản: <strong style="color: #d97706;">099276371</strong></p>
+                <p>Nội dung chuyển khoản: <strong id="qr-code-id" style="color: #2563eb;"></strong></p>
+                <p>Số tiền cần chuyển: <strong id="qr-amount-text">0 ₫</strong></p>
+                <p id="promo-notice-text" style="color: #16a34a; font-weight: bold; margin-top: 4px;" hidden>Đã áp dụng khuyến mãi: Nhận 1.000.000 ₫</p>
+              </div>
+              <p class="qr-hint">Hệ thống sẽ tự động ghi nhận sau khi bạn quét mã thành công.</p>
+              <button type="button" class="primary-button success-btn" id="confirm-deposit-btn">Xác nhận đã hoàn tất chuyển khoản</button>
+            </div>
+          </div>
+
+          <div id="withdraw-fields" class="fields" hidden>
+            <label><span>Ngân hàng nhận</span><input type="text" id="withdraw-bank" placeholder="VD: VIB, Techcombank, VCB..."></label>
+            <label><span>Số tài khoản nhận</span><input type="text" id="withdraw-account" placeholder="Nhập số tài khoản thụ hưởng"></label>
+            <label><span>Tên chủ tài khoản</span><input type="text" id="withdraw-name" placeholder="VIET HOA KHONG DAU"></label>
+            <label><span>Số tiền muốn rút (₫)</span><input type="number" id="withdraw-amount" placeholder="Nhập số tiền cần rút"></label>
+          </div>
+
+          <button type="button" class="primary-button" id="money-action">Tạo lệnh nạp tiền</button>
+        </article>
+      </section>
+
+      <!-- THÔNG BÁO TOAST -->
+      <p class="toast" id="toast" role="status" hidden></p>
+
+      <!-- BOTTOM NAV DƯỚI -->
+      <nav class="bottom-nav bottom-nav-4" aria-label="Điều hướng">
+        <button type="button" class="bottom-item active" data-screen="home"><span>⌂</span><small>Tổng quan</small></button>
+        <button type="button" class="bottom-item" data-screen="trade"><span>↗</span><small>Trade</small></button>
+        <button type="button" class="bottom-item" data-screen="account"><span>◎</span><small>Tài khoản</small></button>
+        <button type="button" class="bottom-item" data-screen="money"><span>⇄</span><small>Nạp / Rút</small></button>
+      </nav>
+
+      <footer>Finora Integration · VIB: 099276371</footer>
+    </main>
+  </body>
+</html>
